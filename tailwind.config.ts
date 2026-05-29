@@ -46,8 +46,8 @@ const config: Config = {
         warning:                   '#F5A623',
       },
       fontFamily: {
-        sans:    ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Roboto Flex', 'Inter', 'sans-serif'],
+        sans:    ['Barlow', 'system-ui', 'sans-serif'],
+        display: ['Barlow Condensed', 'Barlow', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'display-sm': ['36px', { lineHeight: '44px', fontWeight: '400' }],

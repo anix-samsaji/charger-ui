@@ -12,7 +12,7 @@ export default function TopBar() {
     <header className="sticky top-0 z-30 bg-surface border-b border-outline-variant/60 flex items-center w-full shrink-0 px-4 md:px-8 h-[64px] gap-3">
 
       {/* ── Logo image ── */}
-      <div className="shrink-0 flex items-center h-8">
+      <div className="shrink-0 flex items-center h-12">
         <img
           src={AMARON_LOGO}
           alt="Amaron"
