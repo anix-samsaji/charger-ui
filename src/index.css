@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── M3 Design Tokens — Light ─────────────────────────────── */
+:root {
+  --m3-primary:                   61 168 20;    /* #3DA814 */
+  --m3-on-primary:                255 255 255;  /* #FFFFFF */
+  --m3-primary-container:         184 245 138;  /* #B8F58A */
+  --m3-on-primary-container:      10 41 0;      /* #0A2900 */
+
+  --m3-secondary:                 63 74 86;     /* #3F4A56 */
+  --m3-on-secondary:              255 255 255;
+  --m3-secondary-container:       211 220 230;  /* #D3DCE6 */
+  --m3-on-secondary-container:    11 25 39;
+
+  --m3-tertiary:                  0 107 125;    /* #006B7D */
+  --m3-on-tertiary:               255 255 255;
+  --m3-tertiary-container:        179 236 245;  /* #B3ECF5 */
+  --m3-on-tertiary-container:     0 31 39;
+
+  --m3-error:                     179 38 30;    /* #B3261E */
+  --m3-on-error:                  255 255 255;
+  --m3-error-container:           249 222 220;  /* #F9DEDC */
+  --m3-on-error-container:        65 14 11;
+
+  --m3-background:                250 251 252;  /* #FAFBFC */
+  --m3-on-background:             26 28 30;     /* #1A1C1E */
+
+  --m3-surface:                   250 251 252;
+  --m3-on-surface:                26 28 30;
+  --m3-surface-variant:           225 227 232;  /* #E1E3E8 */
+  --m3-on-surface-variant:        68 71 78;     /* #44474E */
+
+  --m3-surface-container-lowest:  255 255 255;
+  --m3-surface-container-low:     243 245 247;  /* #F3F5F7 */
+  --m3-surface-container:         236 239 242;  /* #ECEFF2 */
+  --m3-surface-container-high:    229 233 237;  /* #E5E9ED */
+  --m3-surface-container-highest: 222 227 232;  /* #DEE3E8 */
+
+  --m3-outline:                   116 119 127;  /* #74777F */
+  --m3-outline-variant:           196 199 207;  /* #C4C7CF */
+}
+
+/* ─── M3 Design Tokens — Dark ──────────────────────────────── */
+.dark {
+  --m3-primary:                   126 227 82;   /* #7EE352 */
+  --m3-on-primary:                10 41 0;      /* #0A2900 */
+  --m3-primary-container:         42 122 0;     /* #2A7A00 */
+  --m3-on-primary-container:      212 255 176;  /* #D4FFB0 */
+
+  --m3-secondary:                 184 197 209;  /* #B8C5D1 */
+  --m3-on-secondary:              35 49 61;     /* #23313D */
+  --m3-secondary-container:       42 51 62;     /* #2A333E */
+  --m3-on-secondary-container:    211 220 230;
+
+  --m3-tertiary:                  93 213 235;   /* #5DD5EB */
+  --m3-on-tertiary:               0 54 63;      /* #00363F */
+  --m3-tertiary-container:        0 80 94;      /* #00505E */
+  --m3-on-tertiary-container:     179 236 245;
+
+  --m3-error:                     255 180 171;  /* #FFB4AB */
+  --m3-on-error:                  105 0 5;      /* #690005 */
+  --m3-error-container:           147 0 10;     /* #93000A */
+  --m3-on-error-container:        255 218 214;  /* #FFDAD6 */
+
+  --m3-background:                14 17 22;     /* #0E1116 */
+  --m3-on-background:             226 227 232;  /* #E2E3E8 */
+
+  --m3-surface:                   14 17 22;
+  --m3-on-surface:                226 227 232;
+  --m3-surface-variant:           68 71 78;     /* #44474E */
+  --m3-on-surface-variant:        196 199 207;  /* #C4C7CF */
+
+  --m3-surface-container-lowest:  8 9 12;       /* #08090C */
+  --m3-surface-container-low:     22 26 32;     /* #161A20 */
+  --m3-surface-container:         26 31 38;     /* #1A1F26 */
+  --m3-surface-container-high:    36 42 51;     /* #242A33 */
+  --m3-surface-container-highest: 46 53 63;     /* #2E353F */
+
+  --m3-outline:                   142 144 153;  /* #8E9099 */
+  --m3-outline-variant:           68 71 78;     /* #44474E */
+}
+
+/* ─── Base ─────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: rgb(var(--m3-background));
+  color: rgb(var(--m3-on-background));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* tabular nums for live values */
+.tnum {
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Animated background grid dots ────────────────────────── */
+.bg-grid-dots {
+  background-image: radial-gradient(
+    circle,
+    rgb(var(--m3-primary) / 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 40px 40px;
+}
+
+/* ─── Scrollbar (thin, themed) ──────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--m3-outline-variant));
+  border-radius: 9999px;
+}
+
+/* ─── Material Symbols ──────────────────────────────────────── */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+/* ─── View Transition API (theme switch) ────────────────────── */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+::view-transition-new(root) {
+  clip-path: circle(0% at var(--vt-x, 50%) var(--vt-y, 50%));
+  animation-name: theme-reveal;
+}
+
+@keyframes theme-reveal {
+  from { clip-path: circle(0% at var(--vt-x, 50%) var(--vt-y, 50%)); }
+  to   { clip-path: circle(150% at var(--vt-x, 50%) var(--vt-y, 50%)); }
+}
+
+/* ─── Leaflet popup overrides ───────────────────────────────── */
+.leaflet-popup-content-wrapper {
+  background: rgb(var(--m3-surface-container-highest)) !important;
+  border: 1px solid rgb(var(--m3-outline-variant)) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,.25) !important;
+  padding: 0 !important;
+}
+.leaflet-popup-tip-container { display: none !important; }
+.leaflet-popup-close-button {
+  color: rgb(var(--m3-on-surface-variant)) !important;
+  font-size: 18px !important;
+  top: 8px !important;
+  right: 10px !important;
+}
+.leaflet-popup-content { margin: 0 !important; }
+
+.lf-popup {
+  font-family: 'Inter', system-ui, sans-serif;
+  padding: 14px 16px;
+  min-width: 200px;
+}
+.lf-popup-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(var(--m3-on-surface));
+  margin-bottom: 2px;
+}
+.lf-popup-loc {
+  font-size: 11px;
+  color: rgb(var(--m3-on-surface-variant));
+  margin-bottom: 12px;
+}
+.lf-popup-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgb(var(--m3-primary));
+  color: rgb(var(--m3-on-primary));
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: opacity .15s;
+}
+.lf-popup-btn:hover { opacity: .88; }
+
+/* hide Leaflet attribution */
+.leaflet-control-attribution { display: none !important; }
+
+/* ─── Recharts customisations ───────────────────────────────── */
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-default-tooltip {
+  background: rgb(var(--m3-surface-container-highest)) !important;
+  border: 1px solid rgb(var(--m3-outline-variant)) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.2) !important;
+  padding: 12px 16px !important;
+}
